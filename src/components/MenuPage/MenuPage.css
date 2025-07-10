@@ -8,7 +8,7 @@
   justify-content: center;
 }
 
-.menu-container.mobile {
+.menu-container.mobile .menu-page {
   transform-origin: center left;
 }
 
