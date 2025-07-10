@@ -1,0 +1,10 @@
+{
+    "path": "/menu/",
+    "images":[
+        {"id": 1, "url": "/menu/image1.jpg"},
+        {"id": 2, "url": "/menu/image2.jpg"}
+    ],
+    "blank": {
+        "id": "blank-page", "url": "/menu/image7.jpg"
+    }
+}
