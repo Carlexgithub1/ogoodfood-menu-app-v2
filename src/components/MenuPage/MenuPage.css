@@ -1,0 +1,51 @@
+.menu-page {
+  position: relative;
+  width: 100%;
+
+  background: red;
+
+  display: flex;
+  justify-content: center;
+}
+
+.menu-container.mobile {
+  transform-origin: center left;
+}
+
+/* Animations */
+.menu-page {
+  animation: rotate-right 0.8s ease-in-out forwards;
+}
+.menu-page.flipped {
+  animation: rotate-left 0.8s ease-in-out forwards;
+}
+
+/* Keyframes */
+@keyframes hide-page {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes show-page {
+  0% {
+    opacity: 0;
+  }
+  49% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,38 @@
+/* Colors */
+body {
+  --white: hsl(0, 0%, 95%);
+  --dark: hsl(0, 0%, 5%);
+
+  --dark-10: hsl(0, 0%, 10%);
+  --dark-20: hsl(0, 0%, 20%);
+  --dark-30: hsl(0, 0%, 30%);
+
+  --white-90: hsl(0, 0%, 90%);
+  --white-80: hsl(0, 0%, 80%);
+  --white-70: hsl(0, 0%, 70%);
+
+  --accent: hsl(0, 80%, 50%);
+}
+
+body {
+  /* Background colors */
+  --bg-color-1: var(--white);
+  --bg-color-2: var(--white-90);
+  --bg-color-3: var(--white-85);
+
+  /* Text colors */
+  --text-color-1: var(--dark);
+  --text-color-2: var(--dark-10);
+  --text-color-3: var(--dark-30);
+
+  /* bButton color */
+  --btn-bg-color-active: var(--dark);
+  --btn-text-color-active: var(--white);
+
+  /* Border */
+  --border-1: 0.0625rem solid var(--dark-20);
+}
+
+body.dark {
+  --grey-10: hsl(0, 0%, 10%);
+}

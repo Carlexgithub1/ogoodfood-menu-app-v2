@@ -1,0 +1,54 @@
+.btn {
+  width: 100%;
+  max-width: 8rem;
+  height: 3rem;
+  padding: 1rem 1rem;
+
+  font-size: 1rem;
+
+  display: flex;
+  align-items: center;
+  /* gap: 1rem; */
+
+  color: var(--dark);
+  background-color: var(--white-90);
+  border: none;
+  border-radius: 1rem;
+
+  cursor: pointer;
+
+  opacity: 1;
+}
+
+.btn:hover:not(.disabled) {
+  opacity: 0.5;
+}
+
+.btn:active:not(.disabled) {
+  opacity: 1;
+  background-color: var(--btn-bg-color-active);
+  color: var(--btn-text-color-active);
+}
+
+.btn.disabled {
+  opacity: 0.2;
+  cursor: auto;
+}
+
+.icon-arrow-left,
+.icon-arrow-right {
+  font-size: 1rem;
+}
+.icon-arrow-left {
+  margin-right: auto;
+}
+.icon-arrow-right {
+  margin-left: auto;
+}
+
+.btn-reset {
+  width: fit-content;
+}
+
+.icon-reset {
+}

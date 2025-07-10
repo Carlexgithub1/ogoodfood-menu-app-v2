@@ -1,0 +1,58 @@
+/* Menu page faces */
+.menu-page-face {
+  position: absolute;
+  height: 65vh;
+  background-color: var(--white-80);
+  display: flex;
+
+  top: 0;
+  left: 0;
+}
+
+.menu-page-face.front {
+  z-index: 1;
+}
+
+.menu-page-face.back {
+  transform: rotateY(-180deg);
+}
+
+.menu-container.mobile .menu-page-face.back {
+  position: relative;
+}
+
+.menu-page-face img {
+  max-width: 25rem;
+  height: 100%;
+  flex-grow: 1;
+  object-fit: cover;
+
+  backface-visibility: hidden;
+}
+
+/* Animations */
+.menu-page .menu-page-face.front {
+  animation: show-page 0.8s ease-in-out forwards;
+}
+.menu-page.flipped .menu-page-face.front {
+  animation: hide-page 0.8s ease-in-out forwards;
+}
+
+/* Keyframes */
+@keyframes rotate-left {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-180deg);
+  }
+}
+
+@keyframes rotate-right {
+  from {
+    transform: rotateY(-180deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+}
