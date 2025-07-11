@@ -1,0 +1,10 @@
+.icon-arrow-left,
+.icon-arrow-right {
+  font-size: 1rem;
+}
+.icon-arrow-left {
+  margin-right: auto;
+}
+.icon-arrow-right {
+  margin-left: auto;
+}

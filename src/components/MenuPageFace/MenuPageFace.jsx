@@ -1,9 +1,9 @@
 import "./MenuPageFace.css";
 
-export default function MenuPageFace({ id, type, src }) {
+export default function MenuPageFace({ menuPageId, type, image }) {
     return (
-        <div id={id} className={`menu-page-face ${type}`}>
-            <img src={src} alt="Page menu" />
+        <div id={menuPageId + image.id} className={`menu-page-face ${type}`}>
+            <img src={image.url} alt="Page menu" loading="lazy" />
         </div>
     )
 }

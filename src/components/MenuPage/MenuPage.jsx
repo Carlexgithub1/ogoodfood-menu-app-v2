@@ -1,34 +1,42 @@
 import "./MenuPage.css";
 import MenuPageFace from "../MenuPageFace/MenuPageFace";
+import GetZIndexFromId from "../../utils/GetZIndexFromId";
 
-export default function MenuPage({ id, images, device = "mobile" }) {
-  const MenuPageId = `menu-page-${device}-${id}`;
+export default function MenuPage({ id, deviceMode = "mobile", images, defaultImage, flipped = false }) {
+
+  const menuPageId = `menu-page-${deviceMode}-${id}`;
+
   return (
-    <div id={MenuPageId} className="menu-page">
+    <div
+      id={menuPageId}
+      className={`menu-page ${flipped ? "flipped" : ""}`}
+      style={{ zIndex: GetZIndexFromId(id) }}
+    >
+
       {!Array.isArray(images) ? (
         <>
           <MenuPageFace
-            id={MenuPageId + images.id}
+            menuPageId={menuPageId}
+            image={images}
             type={"front"}
-            src={images.url}
           />
           <MenuPageFace
-            id={MenuPageId + "blank"}
+            menuPageId={menuPageId}
+            image={defaultImage}
             type={"back"}
-            src={"/menu/image1.jpg"}
           />
         </>
       ) : (
         <>
           <MenuPageFace
-            id={MenuPageId + images[0].id}
+            menuPageId={menuPageId}
+            image={images[0]}
             type={"front"}
-            src={images[0].url}
           />
           <MenuPageFace
-            id={MenuPageId + images[1].id}
+            menuPageId={menuPageId}
+            image={images[1]}
             type={"back"}
-            src={images[1].url}
           />
         </>
       )}

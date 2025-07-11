@@ -21,7 +21,7 @@
 }
 
 .btn:hover:not(.disabled) {
-  opacity: 0.5;
+  background-color: var(--white-80);
 }
 
 .btn:active:not(.disabled) {
@@ -33,17 +33,6 @@
 .btn.disabled {
   opacity: 0.2;
   cursor: auto;
-}
-
-.icon-arrow-left,
-.icon-arrow-right {
-  font-size: 1rem;
-}
-.icon-arrow-left {
-  margin-right: auto;
-}
-.icon-arrow-right {
-  margin-left: auto;
 }
 
 .btn-reset {

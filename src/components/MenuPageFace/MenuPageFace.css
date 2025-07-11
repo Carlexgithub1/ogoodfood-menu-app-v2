@@ -20,6 +20,9 @@
 .menu-container.mobile .menu-page-face.back {
   position: relative;
 }
+.menu-container.mobile .menu-page-face.front {
+  left: 0;
+}
 
 .menu-page-face img {
   max-width: 25rem;
@@ -35,24 +38,35 @@
   animation: show-page 0.8s ease-in-out forwards;
 }
 .menu-page.flipped .menu-page-face.front {
-  animation: hide-page 0.8s ease-in-out forwards;
+  animation: hide-page-face 0.8s ease-in-out forwards;
 }
 
 /* Keyframes */
-@keyframes rotate-left {
-  from {
-    transform: rotateY(0deg);
+@keyframes hide-page-face {
+  0% {
+    opacity: 1;
   }
-  to {
-    transform: rotateY(-180deg);
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
   }
 }
-
-@keyframes rotate-right {
-  from {
-    transform: rotateY(-180deg);
+@keyframes show-page {
+  0% {
+    opacity: 0;
   }
-  to {
-    transform: rotateY(0deg);
+  49% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
   }
 }
