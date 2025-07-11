@@ -6,8 +6,10 @@ body {
   --dark-10: hsl(0, 0%, 10%);
   --dark-20: hsl(0, 0%, 20%);
   --dark-30: hsl(0, 0%, 30%);
+  --dark-40: hsl(0, 0%, 40%);
 
   --white-90: hsl(0, 0%, 90%);
+  --white-85: hsl(0, 0%, 85%);
   --white-80: hsl(0, 0%, 80%);
   --white-70: hsl(0, 0%, 70%);
 
@@ -19,6 +21,7 @@ body {
   --bg-color-1: var(--white);
   --bg-color-2: var(--white-90);
   --bg-color-3: var(--white-85);
+  --bg-color-4: var(--white-80);
 
   /* Text colors */
   --text-color-1: var(--dark);
@@ -26,6 +29,11 @@ body {
   --text-color-3: var(--dark-30);
 
   /* bButton color */
+  --btn-bg-color: var(--bg-color-2);
+  --btn-text-color: var(--text-color-1);
+
+  --btn-bg-color-hover: var(--bg-color-3);
+
   --btn-bg-color-active: var(--dark);
   --btn-text-color-active: var(--white);
 
@@ -38,6 +46,7 @@ body.dark {
   --bg-color-1: var(--dark-10);
   --bg-color-2: var(--dark-20);
   --bg-color-3: var(--dark-30);
+  --bg-color-4: var(--dark-40);
 
   /* Text colors */
   --text-color-1: var(--white);
@@ -45,8 +54,13 @@ body.dark {
   --text-color-3: var(--white-80);
 
   /* bButton color */
-  --btn-bg-color-active: var(--white);
-  --btn-text-color-active: var(--dark);
+  --btn-bg-color: var(--bg-color-2);
+  --btn-text-color: var(--text-color-1);
+
+  --btn-bg-color-hover: var(--bg-color-3);
+
+  --btn-bg-color-active: var(--text-color-1);
+  --btn-text-color-active: var(--bg-color-1);
 
   /* Border */
   --border-1: 0.0625rem solid var(--white-85);
@@ -58,6 +72,7 @@ body.dark {
     --bg-color-1: var(--dark-10);
     --bg-color-2: var(--dark-20);
     --bg-color-3: var(--dark-30);
+    --bg-color-4: var(--dark-40);
 
     /* Text colors */
     --text-color-1: var(--white);
@@ -65,8 +80,13 @@ body.dark {
     --text-color-3: var(--white-80);
 
     /* bButton color */
-    --btn-bg-color-active: var(--white);
-    --btn-text-color-active: var(--dark);
+    --btn-bg-color: var(--bg-color-2);
+    --btn-text-color: var(--text-color-1);
+
+    --btn-bg-color-hover: var(--bg-color-3);
+
+    --btn-bg-color-active: var(--text-color-1);
+    --btn-text-color-active: var(--bg-color-1);
 
     /* Border */
     --border-1: 0.0625rem solid var(--white-85);
