@@ -57,7 +57,7 @@ function App() {
       updateDeviceMode();
     }
     window.addEventListener("resize", checkAndResize);
-    // return window.removeEventListener("resize", checkAndResize);
+    return window.removeEventListener("resize", checkAndResize);
   })
 
   const goToPrevPage = () => {
