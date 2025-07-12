@@ -23,9 +23,10 @@ export default function NavButton({ type, disabled = false, onClick }) {
       >
         {isPrev && (
           <>
-            <span className="material-symbols-outlined icon-arrow-left">
+            <svg className="icon-arrow-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor"><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" /></svg>
+            {/* <span className="material-symbols-outlined ">
               arrow_back_ios
-            </span>
+            </span> */}
             Précédent
           </>
         )}
@@ -33,9 +34,10 @@ export default function NavButton({ type, disabled = false, onClick }) {
         {isNext && (
           <>
             Suivant
-            <span className="material-symbols-outlined icon-arrow-right">
+            <svg className="icon-arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" /></svg>
+            {/* <span className="material-symbols-outlined icon-arrow-right">
               arrow_forward_ios
-            </span>
+            </span> */}
           </>
         )}
 
