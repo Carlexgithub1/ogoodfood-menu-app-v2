@@ -13,8 +13,8 @@ function App() {
   const [menuLoaded, setMenuLoaded] = useState(false);
 
   const [currentPage, setCurrentPage] = useState(1);
-  // const imageCount = manifest.images.length || 0;
-  const imageCount = 4;
+  const [imageCount, setImageCount] = useState(0);
+  // const imageCount = 4;
   const pageCount = deviceMode === "mobile" ? imageCount : Math.ceil(imageCount / 2);
 
   const loading = useRef(true);
@@ -36,6 +36,7 @@ function App() {
 
       fetchMenu().then((data) => {
         setManifest(data);
+        setImageCount(data.images.length)
         console.log("Menu manifest", data);
         loading.current = false;
         // updateDeviceMode();
@@ -60,29 +61,21 @@ function App() {
   })
 
   const goToPrevPage = () => {
-    let nextPage = currentPage >= 1 ? currentPage - 1 : currentPage;
-    console.log("Going to previous page: ", nextPage);
+    const nextPageNumber = currentPage >= 1 ? currentPage - 1 : currentPage;
+    const pageSelector = `#menu-page-${deviceMode}-${nextPageNumber}`;
+    const closePageEvent = new CustomEvent("custom:close-page", { detail: { pageSelector } });
 
-    const page = document.querySelector(`#menu-page-${deviceMode}-${nextPage}`);
-    const zIndex = Number(page.style.zIndex) * -1;
-
-    page.classList.remove("flipped");
-    page.style.zIndex = zIndex;
-
-    setCurrentPage(nextPage);
+    window.dispatchEvent(closePageEvent);
+    setCurrentPage(nextPageNumber);
   }
 
   const goToNextPage = () => {
-    let nextPage = currentPage <= pageCount + 1 ? currentPage + 1 : pageCount + 1;
-    console.log("Going to next page: ", nextPage);
+    const nextPageNumber = currentPage <= pageCount + 1 ? currentPage + 1 : pageCount + 1;
+    const pageSelector = `#menu-page-${deviceMode}-${currentPage}`;
+    const flipPageEvent = new CustomEvent("custom:flip-page", { detail: { pageSelector } });
 
-    const page = document.querySelector(`#menu-page-${deviceMode}-${currentPage}`);
-    const zIndex = Number(page.style.zIndex) * -1;
-
-    page.style.zIndex = zIndex;
-    page.classList.add("flipped");
-
-    setCurrentPage(nextPage);
+    window.dispatchEvent(flipPageEvent);
+    setCurrentPage(nextPageNumber);
   }
 
   const closePages = () => {
@@ -107,7 +100,7 @@ function App() {
     <>
       <div className="container">
         <Header />
-        <Menu deviceMode={deviceMode} manifest={manifest} menuLoaded={menuLoaded} currentPage />
+        <Menu deviceMode={deviceMode} manifest={manifest} menuLoaded={menuLoaded} />
         <Footer
           currentPage={currentPage}
           pageCount={pageCount}

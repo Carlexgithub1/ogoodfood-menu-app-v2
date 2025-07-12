@@ -17,16 +17,16 @@
 /* Animations */
 .menu-page {
   opacity: 1;
-  transform: rotateY(0deg);
+  /* transform: rotateY(0deg); */
   transition: all 0.8s ease-in-out;
-  /* animation: rotate-right 0.8s ease-in-out forwards; */
+  animation: rotate-right 0.8s ease-in-out forwards;
 }
 /* .menu-page:not(.hidden) {
   animation: show-page 0.8s ease-in-out forwards;
   } */
 .menu-page.flipped {
-  transform: rotateY(-180deg);
-  /* animation: rotate-left 0.8s ease-in-out forwards; */
+  /* transform: rotateY(-180deg); */
+  animation: rotate-left 0.8s ease-in-out forwards;
 }
 .menu-page.hidden {
   opacity: 0;
